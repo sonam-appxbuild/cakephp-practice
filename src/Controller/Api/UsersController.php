@@ -19,7 +19,7 @@ class UsersController extends AppController
     {
         parent::initialize();
 
-        $this->Authentication->allowUnauthenticated(['token']);
+        $this->Authentication->allowUnauthenticated(['token', 'index']);
 
     }
 
