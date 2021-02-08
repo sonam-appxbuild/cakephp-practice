@@ -61,6 +61,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
 
         // Authentication plugin
         $this->addPlugin('Authentication');
+        $this->addPlugin('DebugKit');
 
         if (PHP_SAPI === 'cli') {
             $this->bootstrapCli();
