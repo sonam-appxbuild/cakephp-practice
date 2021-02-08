@@ -20,14 +20,18 @@
         <!-- /.box-header -->
         <div class="box-body">
           <dl class="dl-horizontal">
-            <dt scope="row"><?= __('Product Name') ?></dt>
-            <dd><?= h($product->product_name) ?></dd>
+            <dt scope="row"><?= __('Name') ?></dt>
+            <dd><?= h($product->name) ?></dd>
             <dt scope="row"><?= __('Id') ?></dt>
             <dd><?= $this->Number->format($product->id) ?></dd>
-            <dt scope="row"><?= __('Price') ?></dt>
-            <dd><?= $this->Number->format($product->price) ?></dd>
-            <dt scope="row"><?= __('Quantity') ?></dt>
-            <dd><?= $this->Number->format($product->quantity) ?></dd>
+            <dt scope="row"><?= __('Category Id') ?></dt>
+            <dd><?= $this->Number->format($product->category_id) ?></dd>
+            <dt scope="row"><?= __('Sub Category Id') ?></dt>
+            <dd><?= $this->Number->format($product->sub_category_id) ?></dd>
+            <dt scope="row"><?= __('Image Id') ?></dt>
+            <dd><?= $this->Number->format($product->image_id) ?></dd>
+            <dt scope="row"><?= __('Thumbnail Id') ?></dt>
+            <dd><?= $this->Number->format($product->thumbnail_id) ?></dd>
             <dt scope="row"><?= __('Created') ?></dt>
             <dd><?= h($product->created) ?></dd>
             <dt scope="row"><?= __('Modified') ?></dt>

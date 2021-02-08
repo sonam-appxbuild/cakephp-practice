@@ -35,7 +35,9 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?php echo $this->Url->build(); ?>"><?php echo Configure::read('Theme.logo.large') ?></a>
+        <img src="logo.png" alt="logo" width="80px" height="80px">
+
+<!--        <a href="--><?php //echo $this->Url->build(); ?><!--">--><?php //echo Configure::read() ?><!--</a>-->
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

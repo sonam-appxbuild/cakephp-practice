@@ -9,9 +9,11 @@ use Cake\ORM\Entity;
  * Product Entity
  *
  * @property int $id
- * @property string $product_name
- * @property int $price
- * @property int $quantity
+ * @property string $name
+ * @property int $category_id
+ * @property int $sub_category_id
+ * @property int $image_id
+ * @property int $thumbnail_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime|null $modified
  */
@@ -27,9 +29,11 @@ class Product extends Entity
      * @var array
      */
     protected $_accessible = [
-        'product_name' => true,
-        'price' => true,
-        'quantity' => true,
+        'name' => true,
+        'category_id' => true,
+        'sub_category_id' => true,
+        'image_id' => true,
+        'thumbnail_id' => true,
         'created' => true,
         'modified' => true,
     ];

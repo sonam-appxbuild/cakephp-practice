@@ -29,9 +29,11 @@
           <?php echo $this->Form->create($product, ['role' => 'form']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('product_name');
-                echo $this->Form->control('price');
-                echo $this->Form->control('quantity');
+                echo $this->Form->control('name');
+                echo $this->Form->control('category_id');
+                echo $this->Form->control('sub_category_id');
+                echo $this->Form->control('image_id');
+                echo $this->Form->control('thumbnail_id');
               ?>
             </div>
             <!-- /.box-body -->

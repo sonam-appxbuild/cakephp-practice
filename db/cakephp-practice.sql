@@ -1,6 +1,6 @@
 -- MariaDB dump 10.18  Distrib 10.4.16-MariaDB, for Win64 (AMD64)
 --
--- Host: 127.0.0.1    Database: cakephp-practice
+-- Host: 127.0.0.1    Database: amhomeco-monday
 -- ------------------------------------------------------
 -- Server version	10.4.16-MariaDB
 
@@ -16,17 +16,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `products`
+-- Table structure for table `boards`
 --
 
-DROP TABLE IF EXISTS `products`;
+DROP TABLE IF EXISTS `boards`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
+CREATE TABLE `boards` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) NOT NULL,
-  `price` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `monday_boardid` varchar(255) NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp(),
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -34,13 +33,13 @@ CREATE TABLE `products` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `products`
+-- Dumping data for table `boards`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Rice',150,2,'2021-01-03 17:56:46','2021-01-03 18:02:57');
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+LOCK TABLES `boards` WRITE;
+/*!40000 ALTER TABLE `boards` DISABLE KEYS */;
+INSERT INTO `boards` VALUES (1,'Nitrile  Gloves1','HBC12','2020-12-26 12:58:12','2020-12-26 12:58:53');
+/*!40000 ALTER TABLE `boards` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -53,14 +52,14 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp(),
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +68,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'sonam.jha','sonam','sonam.jha@appxbuild.com','Sonam','jha','2021-01-04 08:03:30','2021-01-04 08:03:30');
+INSERT INTO `users` VALUES (1,'sonam.jha','12345678','sonam','jha','sonam.jha@appxbuild.com','2021-01-18 08:18:05','2021-01-18 08:18:05'),(2,'ashish','12345678','ashish','ashish','ashish.onmobile@gmail.com','2021-01-18 09:16:42','2021-01-18 09:16:42'),(3,'sonam','$2y$10$f8660kNoqv1cYA6GdtAr8OZMXU3Hinr46hwdwsTdFirblgS0mHhzm','sonam','jha','sonam43jha@gmail.com','2021-01-18 09:17:51','2021-01-18 09:17:51');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-04 17:44:21
+-- Dump completed on 2021-01-18 14:51:26

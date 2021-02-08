@@ -44,6 +44,23 @@ class ProductsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Categories', [
+            'foreignKey' => 'category_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('SubCategories', [
+            'foreignKey' => 'sub_category_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('Images', [
+            'foreignKey' => 'image_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('Thumbnails', [
+            'foreignKey' => 'thumbnail_id',
+            'joinType' => 'INNER',
+        ]);
     }
 
     /**
@@ -59,21 +76,28 @@ class ProductsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('product_name')
-            ->maxLength('product_name', 255)
-            ->requirePresence('product_name', 'create')
-            ->notEmptyString('product_name');
-
-        $validator
-            ->integer('price')
-            ->requirePresence('price', 'create')
-            ->notEmptyString('price');
-
-        $validator
-            ->integer('quantity')
-            ->requirePresence('quantity', 'create')
-            ->notEmptyString('quantity');
+            ->scalar('name')
+            ->maxLength('name', 255)
+            ->requirePresence('name', 'create')
+            ->notEmptyString('name');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->existsIn(['category_id'], 'Categories'), ['errorField' => 'category_id']);
+        $rules->add($rules->existsIn(['sub_category_id'], 'SubCategories'), ['errorField' => 'sub_category_id']);
+        $rules->add($rules->existsIn(['image_id'], 'Images'), ['errorField' => 'image_id']);
+        $rules->add($rules->existsIn(['thumbnail_id'], 'Thumbnails'), ['errorField' => 'thumbnail_id']);
+
+        return $rules;
     }
 }
